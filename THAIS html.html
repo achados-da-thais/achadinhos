@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achadinhos da Thais - Links Oficiais</title>
+    
+    <style>
+        /* === ESTILOS GERAIS === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff5f9 0%, #ffebf4 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* === PERFIL DA THAIS === */
+        .perfil-container {
+            text-align: center;
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+
+        .foto-perfil {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 6px 20px rgba(217, 75, 140, 0.3);
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: #ff5ea8;
+        }
+
+        .perfil-container h1 {
+            color: #333;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            color: #d94b8c;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .instagram-link:hover {
+            opacity: 0.8;
+        }
+
+        /* === CONTAINER DOS BOTÕES === */
+        .botoes-lista {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        /* === ESTILO DOS BOTÕES DE GRUPO === */
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: #444;
+            text-decoration: none;
+            padding: 18px 20px;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255, 94, 168, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            text-align: center;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(217, 75, 140, 0.15);
+            background: #fffbfd;
+            border-color: #ff5ea8;
+            color: #d94b8c;
+        }
+
+        /* Destaque para o Fale Conosco */
+        .btn-link.fale-conosco {
+            background: #e8f9f0;
+            border-color: #a3e4cd;
+            color: #128c7e;
+        }
+        .btn-link.fale-conosco:hover {
+            background: #f2fcf7;
+            border-color: #128c7e;
+            color: #075e54;
+        }
+
+        .rodape {
+            font-size: 12px;
+            color: #999;
+            margin-top: auto;
+        }
+
+
+        /* =========================================
+           === SEU MENU FLUTUANTE ORIGINAL (CSS) ===
+           ========================================= */
+        #botao-thais {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff5ea8, #d94b8c);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 99999;
+            box-shadow: 0 6px 20px rgba(0,0,0,.25);
+            transition: .3s;
+        }
+
+        #botao-thais:hover {
+            transform: scale(1.08);
+        }
+
+        #menu-thais {
+            position: fixed;
+            right: 25px;
+            bottom: 110px;
+            width: 300px;
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,.20);
+            z-index: 99999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: .3s;
+        }
+
+        #menu-thais.ativo {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .menu-header {
+            background: linear-gradient(135deg, #ff5ea8, #d94b8c);
+            color: white;
+            padding: 18px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #menu-thais a {
+            display: block;
+            padding: 15px 18px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #f0f0f0;
+            transition: .3s;
+            font-weight: 500;
+        }
+
+        #menu-thais a:hover {
+            background: #fff0f7;
+            padding-left: 24px;
+        }
+
+        #overlay-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.25);
+            z-index: 99990;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+        }
+
+        #overlay-menu.ativo {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media(max-width:600px) {
+            #menu-thais {
+                width: 90%;
+                right: 5%;
+                bottom: 110px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BLOCO DE PERFIL COM A FOTO REAL E INSTAGRAM -->
+    <div class="perfil-container">
+        <img src="thais.jpg" alt="Thais" class="foto-perfil">
+        
+        <h1>Achadinhos da Thais</h1>
+        
+        <!-- Link do Instagram Atualizado! -->
+        <a href="https://www.instagram.com/buckingham.indaiatuba/" target="_blank" class="instagram-link">
+            📸 @buckingham.indaiatuba
+        </a>
+    </div>
+
+    <!-- LISTA DE BOTÕES (CENTRAL DE GRUPOS) -->
+    <div class="botoes-lista">
+        
+        <a href="https://chat.whatsapp.com/L2F0wL5HL3E5ClSyR9yqxc" target="_blank" class="btn-link">
+            🛍️ Achadinhos em Geral
+        </a>
+
+        <a href="https://chat.whatsapp.com/GypXKjBXSTSG8PmhTJiTmY" target="_blank" class="btn-link">
+            👶 Promo Baby
+        </a>
+
+        <a href="https://chat.whatsapp.com/LpbY1hPpdgUBEB7ypR8NQS" target="_blank" class="btn-link">
+            ⭐ Achados Originais
+        </a>
+
+        <a href="https://chat.whatsapp.com/Jp3fvDvt6pAAHKpV6smD74" target="_blank" class="btn-link">
+            🌹 Buckingham Perfumes
+        </a>
+
+        <a href="https://wa.me/message/MY6UBLGT2W26P1" target="_blank" class="btn-link fale-conosco">
+            📞 Fale Conosco
+        </a>
+
+    </div>
+
+    <div class="rodape">
+        © 2026 Achadinhos da Thais. Todos os direitos reservados.
+    </div>
+
+
+    <!-- =============================================
+       === ESTRUTURA ORIGINAL DO SEU MENU (HTML) ===
+       ============================================= -->
+    <div id="overlay-menu"></div>
+
+    <div id="menu-thais">
+        <div class="menu-header">
+            💖 Achadinhos da Thais
+        </div>
+
+        <a href="https://chat.whatsapp.com/L2F0wL5HL3E5ClSyR9yqxc" target="_blank">🛍️ Achadinhos em Geral</a>
+        <a href="https://chat.whatsapp.com/GypXKjBXSTSG8PmhTJiTmY" target="_blank">👶 Promo Baby</a>
+        <a href="https://chat.whatsapp.com/LpbY1hPpdgUBEB7ypR8NQS" target="_blank">⭐ Achados Originais</a>
+        <a href="https://chat.whatsapp.com/Jp3fvDvt6pAAHKpV6smD74" target="_blank">🌹 Buckingham Perfumes</a>
+        <a href="https://wa.me/message/MY6UBLGT2W26P1" target="_blank">📞 Fale Conosco</a>
+    </div>
+
+    <button id="botao-thais" onclick="toggleMenuThais()">
+        💖
+    </button>
+
+
+    <!-- ==============================================
+       === COMPORTAMENTO ORIGINAL DO SEU JAVASCRIPT ===
+       ============================================== -->
+    <script>
+        function toggleMenuThais(){
+            const menu = document.getElementById('menu-thais');
+            const overlay = document.getElementById('overlay-menu');
+
+            menu.classList.toggle('ativo');
+            overlay.classList.toggle('ativo');
+        }
+
+        document.getElementById('overlay-menu').addEventListener('click', function(){
+            document.getElementById('menu-thais').classList.remove('ativo');
+            document.getElementById('overlay-menu').classList.remove('ativo');
+        });
+    </script>
+
+</body>
+</html>
