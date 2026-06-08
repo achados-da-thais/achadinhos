@@ -28,6 +28,9 @@
             text-align: center;
             margin-bottom: 30px;
             max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .foto-perfil {
@@ -45,15 +48,24 @@
             color: #333;
             font-size: 24px;
             font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* === CONTAINER DE INSTAGRAMS === */
+        .instagram-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
             margin-bottom: 5px;
         }
 
         .instagram-link {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             color: #d94b8c;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             transition: opacity 0.2s;
         }
@@ -212,19 +224,21 @@
 </head>
 <body>
 
-    <!-- BLOCO DE PERFIL COM A FOTO REAL E INSTAGRAM -->
     <div class="perfil-container">
         <img src="thais.jpg" alt="Thais" class="foto-perfil">
         
         <h1>Achadinhos da Thais</h1>
         
-        <!-- Link do Instagram Atualizado! -->
-        <a href="https://www.instagram.com/buckingham.indaiatuba/" target="_blank" class="instagram-link">
-            📸 @buckingham.indaiatuba
-        </a>
+        <div class="instagram-group">
+            <a href="https://www.instagram.com/buckingham.indaiatuba/" target="_blank" class="instagram-link">
+                📸 @buckingham.indaiatuba
+            </a>
+            <a href="https://www.instagram.com/promocasaeutilidades" target="_blank" class="instagram-link">
+                🏡 @promocasaeutilidades
+            </a>
+        </div>
     </div>
 
-    <!-- LISTA DE BOTÕES (CENTRAL DE GRUPOS) -->
     <div class="botoes-lista">
         
         <a href="https://chat.whatsapp.com/L2F0wL5HL3E5ClSyR9yqxc" target="_blank" class="btn-link">
@@ -254,9 +268,6 @@
     </div>
 
 
-    <!-- =============================================
-       === ESTRUTURA ORIGINAL DO SEU MENU (HTML) ===
-       ============================================= -->
     <div id="overlay-menu"></div>
 
     <div id="menu-thais">
@@ -276,9 +287,6 @@
     </button>
 
 
-    <!-- ==============================================
-       === COMPORTAMENTO ORIGINAL DO SEU JAVASCRIPT ===
-       ============================================== -->
     <script>
         function toggleMenuThais(){
             const menu = document.getElementById('menu-thais');
