@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33F1PTRL74"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-33F1PTRL74');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achadinhos da Thais - Links Oficiais</title>
@@ -224,11 +234,13 @@
 </head>
 <body>
 
+    <!-- BLOCO DE PERFIL COM A FOTO REAL E INSTAGRAMS -->
     <div class="perfil-container">
         <img src="thais.jpg" alt="Thais" class="foto-perfil">
         
         <h1>Achadinhos da Thais</h1>
         
+        <!-- Links do Instagram Atualizados! -->
         <div class="instagram-group">
             <a href="https://www.instagram.com/buckingham.indaiatuba/" target="_blank" class="instagram-link">
                 📸 @buckingham.indaiatuba
@@ -239,6 +251,7 @@
         </div>
     </div>
 
+    <!-- LISTA DE BOTÕES (CENTRAL DE GRUPOS) -->
     <div class="botoes-lista">
         
         <a href="https://chat.whatsapp.com/L2F0wL5HL3E5ClSyR9yqxc" target="_blank" class="btn-link">
@@ -268,6 +281,9 @@
     </div>
 
 
+    <!-- =============================================
+       === ESTRUTURA ORIGINAL DO SEU MENU (HTML) ===
+       ============================================= -->
     <div id="overlay-menu"></div>
 
     <div id="menu-thais">
@@ -287,6 +303,9 @@
     </button>
 
 
+    <!-- ==============================================
+       === COMPORTAMENTO ORIGINAL DO SEU JAVASCRIPT ===
+       ============================================== -->
     <script>
         function toggleMenuThais(){
             const menu = document.getElementById('menu-thais');
